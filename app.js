@@ -1,2 +1,1 @@
-console.log('Hello world!!')
-console.log('testtesttest')
+console.log('Hello world!')
