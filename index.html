@@ -8,20 +8,31 @@
         body {
             background-color: #293133;
             color: #fcfcfc;
-            text-align: center; /* Центрирует текст и изображение по горизонтали */
         }
 
-        img {
+        /* Центрирование первого изображения */
+        .center-image {
             display: block;
-            margin: 0 auto; /* Центрирование изображения */
+            margin: 0 auto;
+        }
+
+        /* Выравнивание второго изображения по правому краю и уменьшение размера */
+        .right-image {
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+            margin-top: 10px;
+            width: 500px; /* Уменьшение размера (ширина) */
+            /* Можно также задать высоту, например: height: 150px; */
         }
     </style>
     <script src="./app.js"></script>
 </head>
 <body>
 
-<h1>Знаете ли вы?</h1>
-<img src="cat.jpg" alt="Cat Image">
+<h1 align="center">Знаете ли вы?</h1>
+<img class="center-image" src="cat.jpg" alt="Cat Image"> <!-- Первое изображение по центру -->
+<img class="right-image" src="cat.jpg" alt="Cat Image"> <!-- Второе изображение справа с уменьшенным размером -->
 
 </body>
 </html>
