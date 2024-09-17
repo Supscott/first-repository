@@ -1,11 +1,22 @@
-let depositUSD = 12000
-let perc = 7
-let timeMonth = 24
+const type = 'video';
 
-const itog = depositUSD * (1 + (perc/100)/12) ** timeMonth
+if (type === 'music') {
+    console.log('Музыка');
+} else if (type === 'video') {
+    console.log('это видео бро...');
+} else {
+    console.log('Это не музыка бро!');
+}
 
-if (itog > 13500) {
-    console.log('Покупка доступна')
-} else     console.log('Покупка недоступна')
+switch (type){
+    case 'music':
+        console.log('dolbit normalno');
+        break;
+    case 'video':
+        console.log('pokazivaet normalno');
+        break;
+    default:
+        console.log('ne slishno i ne vidno bro');
+}
 
 
