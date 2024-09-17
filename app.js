@@ -1,4 +1,20 @@
-const role = 'User'
+const answer = prompt('КАПЧА! \nСколько будет 7 + или - 15?')
 
-let text = role == 'Admin' ? 'Admin' : role == 'User' ? role : 'Not user'
-console.log(text)
+switch (answer) {
+    case '8':
+        console.log('Успех!');
+        break;
+    case '22':
+        console.log('Успех!');
+        break;
+    case 'я не робот':
+        console.log('Успех!');
+        break;
+    case 'Я не робот':
+        console.log('Успех!');
+        break;
+    default:
+        console.log('Прочь робот!');
+}
+
+
