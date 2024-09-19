@@ -1,27 +1,28 @@
-/*
-Пользователь хочет приобрести игру в магазине
-Он может это сделать отлько если:
-- Его баланс больше 1000 (balance) или число бонусов больше 100 (bonusBalance)
-- Он не забанен (¿sBanned)
-- Игра не кулена (isExist)
-- Игра в продаже (isSelling)
-Напишите условие для покупки и выведите в консоль результат
-*/
+function calc(number1, symbol, number2) {
+    switch(symbol) {
+        case '+' :
+            return number1 + number2;
+        case '-' :
+            return number1 - number2;
+        case '/' :
+            if (number2 === 0){
+                return 'Error 0';
+            }
+            return number1 / number2;
+        case '*' :
+            return number1 * number2;
+        default :
+            return 'Error'
 
-const balance = 1000;
-const bonusBalance = 100;
-const isBanned = false;
-const isExist = true;
-const isSelling = true; 
+    }
+}
 
-let user = 'Dragon777';
+console.log(calc(1, '+', 1));
+console.log(calc(1, '/', 0));
+console.log(calc(1, 'a', 5));
 
-const userBalance = 1000;
-const userBonusBalance = 50;
+const a = parseFloat(prompt('chislo'));
+const b = prompt('symbol');
+const c = parseFloat(prompt('chislo'));
 
-const canBuy = (userBalance >= balance || userBonusBalance >= bonusBalance) && !isBanned && isExist && isSelling;
-
-if (canBuy) {
-console.log(`Пользователь ${user} может купить игру`)
-} else console.log(`Пользователь ${user} не может купить игру`)
-
+console.log(calc(a, b, c));
