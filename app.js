@@ -1,28 +1,10 @@
-function calc(number1, symbol, number2) {
-    switch(symbol) {
-        case '+' :
-            return number1 + number2;
-        case '-' :
-            return number1 - number2;
-        case '/' :
-            if (number2 === 0){
-                return 'Error 0';
-            }
-            return number1 / number2;
-        case '*' :
-            return number1 * number2;
-        default :
-            return 'Error'
-
-    }
+function toPower (num, power) {
+    const res= num ** power;
+    return res;
 }
 
-console.log(calc(1, '+', 1));
-console.log(calc(1, '/', 0));
-console.log(calc(1, 'a', 5));
+console.log (toPower (2, 3));
 
-const a = parseFloat(prompt('chislo'));
-const b = prompt('symbol');
-const c = parseFloat(prompt('chislo'));
+const toPowerArrow = (num2, power2) => num2 ** power2;
 
-console.log(calc(a, b, c));
+console.log (toPowerArrow (2, 3));
