@@ -1,30 +1,41 @@
 /*
-	Пользователь:
-	- Возраст
-	- Наличие работы
-	- Деньги
-	Нужно проверить может ли он купить новый MacBook за 2000$?
-	Он может брать не только свои деньги, но и взять кредит.
-	Ему дадут 500$, только если ему больше 24-х лет и он
-	имеет работу, 100$ если ему просто больше 24-х лет и 0 в
-	ином случае.
-	Напишите функцию, которая принимает данные пользователя
-	и товара и возвращает true или false;
+Дан список задач
+const tasks = ['Задача 1'];
+- Добавление задачи в конец
+- Удаление задачи по названию
+- Перенос
+- Перенос задачи в начало списка по названию
+- Всегда меняем исходный массив
 */
 
-const money = 1500;
-const age = 24;
-const hasJob = true;
-const macBookPrice = 2000;
+const tasks = ['Task 1'];
 
-function canBuy (userAge, userHasJob, userMoney, macPrice) {
-	if (userAge >= 24 && userHasJob) {
-		userMoney += 500;
-	} else if (userAge >= 24 && !userHasJob) {
-		userMoney += 100;
-	}
-	return userMoney >= macPrice; 
+function Add(task) {
+	tasks.push(task)
 }
 
-const result = canBuy(age, hasJob, money, macBookPrice)
-console.log(result)
+function Delete(task) {
+	const index = tasks.indexOf(task);
+	if (index !== -1) {
+		tasks.splice(index, 1);
+	}
+}
+
+function moveToStart(task) {
+	const index = tasks.indexOf(task);
+	if (index !== -1) {
+		const oldTask = tasks.splice(index, 1)[0];
+		tasks.unshift(oldTask);
+	}
+}
+
+Add('Почистить зубы');
+Add('Убарться');
+Add('Купить хлеб');
+console.log(tasks);
+
+Delete('Почистить зубы');
+console.log(tasks);
+
+moveToStart('Купить хлеб')
+console.log(tasks);
