@@ -1,41 +1,30 @@
 /*
-Дан список задач
-const tasks = ['Задача 1'];
-- Добавление задачи в конец
-- Удаление задачи по названию
-- Перенос
-- Перенос задачи в начало списка по названию
-- Всегда меняем исходный массив
+Дан произвольный url -
+'https://purpleschool.ru/course/javascript'
+Нужно сделать функцию, которая выводит в консоль:
+- Протокол | (https)
+- Доменное имя (purpleschool.ru)
+- Путь внутри сайта (/course/javascript)
 */
 
-const tasks = ['Task 1'];
+const url = 'https://purpleschool.ru/course/javascript'
 
-function Add(task) {
-	tasks.push(task)
+function splitUrl () {
+	const urlArray = url.split('/');
+	const [https, _, name, path1, path2] = urlArray;
+	console.log('Протокол:', https);
+	console.log('Доменное имя:',name);
+	console.log('Пусть внутри сайта:',path1, path2);
 }
 
-function Delete(task) {
-	const index = tasks.indexOf(task);
-	if (index !== -1) {
-		tasks.splice(index, 1);
-	}
+splitUrl();
+console.log(`-------------------`);
+
+function urlPars () {
+	const [protocol, _, host, ...path] = url.split('/');
+	console.log(`Протокол: ${protocol.split(':')[0]}`);
+	console.log(`Доменное имя: ${host}`);
+	console.log(`Пусть внутри сайта: /${path.join('/')}`)
 }
 
-function moveToStart(task) {
-	const index = tasks.indexOf(task);
-	if (index !== -1) {
-		const oldTask = tasks.splice(index, 1)[0];
-		tasks.unshift(oldTask);
-	}
-}
-
-Add('Почистить зубы');
-Add('Убарться');
-Add('Купить хлеб');
-console.log(tasks);
-
-Delete('Почистить зубы');
-console.log(tasks);
-
-moveToStart('Купить хлеб')
-console.log(tasks);
+urlPars();
